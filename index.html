@@ -68,11 +68,10 @@
     </div>
 
     <script>
-        // SCRIPT URL: Lim inn den NYE web-app URL-en din her:
-        const scriptUrl = 'DIN_GOOGLE_APPS_SCRIPT_URL_HER'; 
+        // SCRIPT URL: Din ferdig innlagte adresse til Google Sheets
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbxajXCClpE3h3gn2ueUQ2kQS5DMVtdnBBdOumJBGpCXOkcN_ltiHGUaBU3aGiavQeHt/exec'; 
 
-        // PRODUKTLISTE: Her kan du lime inn/redigere dine egne produkter, priser og bilder!
-        // Hvis bildene ligger i samme mappe på GitHub, skriver du bare './bilde-navn.jpg'
+        // PRODUKTLISTE: Her kan du bytte ut navn, pris og bildefil når du har listen klar!
         const products = [
             { id: 1, name: "Hettegenser", price: 499, image: "./hettegenser.jpg" },
             { id: 2, name: "T-skjorte", price: 199, image: "./t-skjorte.jpg" },
@@ -117,7 +116,7 @@
             const existing = cart.find(i => i.id === productId && i.size === size);
             if (existing) {
                 existing.quantity += quantity;
-                existing.rowSum = existing.quantity * product.price; // Oppdaterer summen for raden
+                existing.rowSum = existing.quantity * product.price;
             } else {
                 cart.push({
                     id: product.id,
@@ -214,7 +213,6 @@
             });
         }
 
-        // Start siden og bygg produktene
         renderProducts();
     </script>
 </body>
